@@ -23,6 +23,10 @@ public class CS245A2 {
             String movie;
             while((movie = br.readLine()) != null){
                 movie = formatDoubleQuotes(split(movie));
+                if(movie == null){
+                    continue;
+                }
+
                 JSONArray jarray = (JSONArray) new JSONParser().parse(movie);
                 ArrayList<String> names = new ArrayList<String>();
                 for(Object obj : jarray){
@@ -45,8 +49,15 @@ public class CS245A2 {
         if(cast[0].contains("[]")){
             return null;
         }
+
+
         if(cast[1].charAt(0) == 'a'){
-            String afterSplit = "[{\"\"c" + cast[1].substring(0, cast[1].length() - 3);
+            String afterSplit;
+            if(cast[1].contains("[]")){
+                afterSplit = "[{\"\"c" + cast[1].substring(0, cast[1].length() - 4);
+            }else {
+                afterSplit = "[{\"\"c" + cast[1].substring(0, cast[1].length() - 3);
+            }
             return afterSplit;
         }
         return null;
@@ -54,6 +65,10 @@ public class CS245A2 {
 
     public String formatDoubleQuotes(String input){
         StringBuilder sb = new StringBuilder();
+        if(input == null){
+            return null;
+        }
+
         for(int i = 0; i< input.length(); i++){
             char curr = input.charAt(i);
 //            if(i == 0 || i == input.length() -1){
