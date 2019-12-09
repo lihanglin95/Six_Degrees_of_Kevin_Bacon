@@ -4,7 +4,7 @@ Find the shortest path between two actors
 # Prerequisites
 JSON-simple 1.1.1 (There is one in the lib director)
 
-# Installing
+# Runing the program
 Run the program with the path of the csv file
 
 # Running the tests
