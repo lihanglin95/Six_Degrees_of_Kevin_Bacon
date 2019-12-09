@@ -1,2 +1,18 @@
 # Six_Degrees_of_Kevin_Bacon
-I used JSON parser in JSON-simple 1.1.1
+Find the shortest path between two actors
+
+# Prerequisites
+JSON-simple 1.1.1 (There is one in the lib director)
+
+# Installing
+Run the program with the path of the csv file
+
+# Running the tests
+Run the unit test class
+
+# Analyze Running time
+addEdge: worst case :O(|V| ^ 2)  
+findShortestPath: worst case: O(|V| * |E|)
+
+# Authors
+Hanglin Li
